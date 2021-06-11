@@ -150,7 +150,8 @@ public class user_creation_and_login extends HttpServlet
                             out.println("Enter rc :<input type=text name=rc>");
                             out.println("<br><br>");
                             out.println("<input type=submit value=ok>");
-                            out.println("</form>");
+                            out.println("</form><br><br>");
+                             out.println("<a href=user_login.jsp><button type=\"button\">LOGOUT</button></a>");
                         }
                         else
                         {
@@ -187,7 +188,7 @@ public class user_creation_and_login extends HttpServlet
                     {        
                         user_mysql.insert(user_name,user_number,user_email,user_hid,user_recharge,user_password,user_access);
                         user_pgsql.insert(user_name,user_number,user_email,user_hid,user_recharge,user_password,user_access);
-                        RequestDispatcher rd=request.getRequestDispatcher("/user_login.jsp");  
+                        RequestDispatcher rd=request.getRequestDispatcher("/SignupSuccess.jsp");  
                         rd.forward(request, response);
                     }
                     else

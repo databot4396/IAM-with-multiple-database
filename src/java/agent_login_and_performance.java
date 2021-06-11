@@ -31,7 +31,7 @@ public class agent_login_and_performance extends HttpServlet
             {
                 String agent_email = request.getParameter("uname");
                 String agent_password = request.getParameter("psw");
-                String email="agent";
+                String email="agent@gmail.com";
                 String password="agent";
                 if(agent_password.equals(password)&&agent_email.equals(email))
                 {
@@ -39,7 +39,7 @@ public class agent_login_and_performance extends HttpServlet
                     out.print("<table border='1' width='100%'");   
                     out.print("<tr><th>Nameee</th><th>Email</th><th>Phone</th><th>H_ID</th><th>ZID</th><th>RC</th><th>Access</th></tr>");  
                     ResultSet rs= user_mysql.selectall("userinfo");
-                    out.println("<h1>ACCESS NEED TO BE GIVEN FOR THE FOLLOWING USERS</h1>");  
+                    out.println("<h3>ACCESS NEED TO BE GIVEN FOR THE FOLLOWING USERS</h3>");  
                     while(rs.next())
                     {
                         if(!("yes".equals(rs.getString(8))))
@@ -61,6 +61,7 @@ public class agent_login_and_performance extends HttpServlet
                     out.println("Do you want to see all users that you have given access:");                
                     out.println(" <input type=submit value=ok>");
                     out.println("</form>");
+                    out.println("<a href=agent_login.jsp><button type=\"button\">LOGOUT</button></a>");
                 }
                 else
                 {
